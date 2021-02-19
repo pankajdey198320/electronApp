@@ -7,15 +7,18 @@ import {ContactModel}from './contact-model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public Contacts:ContactModel[] = [];
+  public Contacts:ContactModel[]=[{
+    firstName:"demo",lastName:"demo",email:"",phone:0
+  }];
   searchString:string="";
   selectedContact :ContactModel;
   constructor(private contactSvc:ContactServiceService,private cd:ChangeDetectorRef){
-   
+   console.log(this.Contacts);
     contactSvc.on('msg',(ev:any,data)=>{
       console.log(data);
     });
     contactSvc.on('contactLoaded',(ev:any,data)=>{
+      console.log(data);
       contactSvc.setConatcts(data);
       this.Contacts =contactSvc.getConatcts();
       this.cd.detectChanges();

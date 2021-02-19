@@ -6,7 +6,7 @@
         <div class="input-group mb-3">
         <input class="form-control" type="search" [(ngModel)]="searchString" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" (click)="searchContacts()"><i class="fa fa-search"></i></button>
+          <button class="btn btn-outline-secondary" type="button" (click)="searchContacts()"><i class="fa fa-search">></i></button>
           
         </div>
         
@@ -19,13 +19,15 @@
       </div>
   
     </div>
-    <div *ngIf="Contacts" class="contacts">
+    <div *ngIf="Contacts !== undefined" class="contacts">
 
       <ul  class="list-group list-group-flush">
-        <li *ngFor="let contact of Contacts" (click)="selectContact(contact)" class="list-group-item" [class.bg-light]="contact.selected === true">
+         <li *ngFor="let contact of Contacts" (click)="selectContact(contact)" class="list-group-item" [class.bg-light]="contact.selected === true">
           {{contact.firstName}} {{contact.lastName}}
-          <button class="badge badge-secondery badge-pill pull-right" (click)="delete(contact)">x</button>
-        </li>
+          
+          <button class="badge badge-secondery badge-pill " (click)="delete(contact)">x</button>
+         
+        </li> 
        
       </ul>
     </div>

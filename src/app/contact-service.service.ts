@@ -9,9 +9,7 @@ export class ContactServiceService {
   private _contacts:ContactModel[] = [];
   private readonly _ipc: any | undefined = undefined;
   constructor() {
-    this._contacts.push({
-      firstName:"pankaj", lastName :"dey", email:"",phone:0
-    });
+    
     if (window.require) {
       try {
         this._ipc = window.require('electron').ipcRenderer;
