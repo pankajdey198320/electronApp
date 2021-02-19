@@ -7,7 +7,7 @@
 
 ## install the packages
 
-**use folloing command**
+**use following command**
 
     cd electronApp
     npm install
