@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+  <div class="col-sm-4" >
+    <div class="search">
+     
+        <div class="input-group mb-3">
+        <input class="form-control" type="search" [(ngModel)]="searchString" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchContacts()"><i class="fa fa-search"></i></button>
+          
+        </div>
+        
+      </div>
+      <div class="btn-group  btn-group-sm" role="group" aria-label="Basic example">
+        <label> sort by</label>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="Sort(1)">First Name</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="Sort(2)">Last Name</button>
+        
+      </div>
+  
+    </div>
+    <div class="contacts">
+
+      <ul  class="list-group list-group-flush">
+        <li *ngFor="let contact of Contacts" (click)="selectContact(contact)" class="list-group-item" [class.bg-light]="contact.selected === true">
+          {{contact.firstName}} {{contact.lastName}}
+          <button class="badge badge-secondery badge-pill pull-right" (click)="delete(contact)">x</button>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+  <div  class="col-sm-8" style="display:block;">
+    <app-contact-details [Contact]="selectedContact"></app-contact-details> 
+  </div>
+</div>
+</div>

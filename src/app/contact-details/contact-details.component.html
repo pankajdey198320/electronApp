@@ -1,0 +1,28 @@
+<div *ngIf="Contact">
+   
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">First and last name</span>
+                </div>
+                <input [(ngModel)]="Contact.firstName" type="text" class="form-control">
+                <input  [(ngModel)]="Contact.lastName" type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Email</span>
+                </div>
+                <input [(ngModel)]="Contact.email" type="email" class="form-control">
+                
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Phone</span>
+                </div>
+                <input [(ngModel)]="Contact.phone" type="number" class="form-control">
+                
+              </div></div>
+              <div class="btn-group" role="group" >
+                   <button *ngIf="Contact" type="button" (click)="Save()" class="btn btn-outline-primary">Save</button>
+                    <button type="button" (click)="AddNew()" class="btn btn-outline-primary">AddNew</button>
+                </div>
+           
