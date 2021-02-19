@@ -19,7 +19,7 @@
       </div>
   
     </div>
-    <div class="contacts">
+    <div *ngIf="Contacts" class="contacts">
 
       <ul  class="list-group list-group-flush">
         <li *ngFor="let contact of Contacts" (click)="selectContact(contact)" class="list-group-item" [class.bg-light]="contact.selected === true">
