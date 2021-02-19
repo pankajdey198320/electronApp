@@ -1,12 +1,19 @@
-#Copy the code 
-use following command
-git clone https://github.com/pankajdey198320/electronApp.git
+## Copy the code
 
-#install the packages 
-use folloing command
+ 
+**use following command**
 
-cd electronApp
-npm install
+    git clone https://github.com/pankajdey198320/electronApp.git
 
-##run the project
-npm run electron
+## install the packages
+
+**use folloing command**
+
+    cd electronApp
+    npm install
+    
+
+## run the project
+
+    npm run electron
+
